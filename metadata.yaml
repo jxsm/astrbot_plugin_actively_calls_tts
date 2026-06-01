@@ -1,0 +1,7 @@
+name: astrbot_plugin_actively_calls_tts
+display_name: 主动调用 TTS 语音合成
+desc: 主动调用 TTS 服务将文本转换为语音消息
+short_desc: 文本转语音插件
+version: 0.1.0
+author: ShuiMo
+repo: ""
