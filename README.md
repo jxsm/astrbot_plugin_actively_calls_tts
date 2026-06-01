@@ -8,20 +8,27 @@ AstrBot 主动调用 TTS 语音合成插件
 
 与 AstrBot 原生的 TTS 回复概率设置不同，本插件让 LLM 具备了主动发送语音的能力，LLM 可以根据对话内容、情感表达需要等因素，智能地决定是否使用语音回复。
 
+## 配置说明
+
+### TTS 提供商
+
+- **tts_provider_id**: 选择 TTS 提供商
+  - 留空则使用系统默认的 TTS 提供商
+  - 也可以手动选择已配置的 TTS 提供商（如 Edge TTS、OpenAI TTS 等）
+
+### 工具配置
+
+- **tool_name**: 工具名称（默认：`actively_send_voice_message`）
+- **tool_description**: 工具描述，告诉 LLM 何时使用这个工具
+- **text_param_description**: 文本参数描述
+- **max_text_length**: 最大文本长度限制（默认：200字，0表示不限制）
+
 ## 使用方法
 
-1. 在 AstrBot 中配置 TTS 提供商（如 Edge TTS、OpenAI TTS 等）
+1. 在 AstrBot 中配置 TTS 提供商（Edge TTS、OpenAI TTS 等）
 2. 安装本插件
-3. 与 LLM 对话时，LLM 会自动判断何时使用语音回复
-
-## 工具说明
-
-插件会向 LLM 注册一个名为 `actively_send_voice_message` 的工具：
-
-- **名称**: `actively_send_voice_message`
-- **描述**: 将文本转换为语音消息并发送给用户
-- **参数**:
-  - `text` (string, 必填): 要转换为语音的文本内容
+3. 在插件设置中选择 TTS 提供商（可选）
+4. 与 LLM 对话时，LLM 会自动判断何时使用语音回复
 
 ## 适用场景
 
@@ -32,6 +39,6 @@ AstrBot 主动调用 TTS 语音合成插件
 
 ## 注意事项
 
-- 需要先在 AstrBot 中配置 TTS 提供商
-- 建议语音文本控制在 200 字以内
+- 建议在插件设置中明确选择 TTS 提供商，避免与系统默认 TTS 冲突
+- 默认语音文本限制为 200 字，可在配置中调整
 - LLM 会根据上下文自动判断是否使用语音，不会每次都发语音

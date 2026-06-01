@@ -1,0 +1,33 @@
+{
+  "tts_provider_id": {
+    "description": "选择 TTS 提供商（留空则使用系统默认）",
+    "type": "string",
+    "hint": "选择一个已配置的 TTS 提供商",
+    "default": "",
+    "_special": "select_provider_tts"
+  },
+  "tool_name": {
+    "description": "工具名称",
+    "type": "string",
+    "hint": "LLM 调用时的工具名称",
+    "default": "actively_send_voice_message"
+  },
+  "tool_description": {
+    "description": "工具描述",
+    "type": "text",
+    "hint": "告诉 LLM 何时使用这个工具",
+    "default": "将文本转换为语音消息并发送给用户。当你想要用语音的方式回复用户时使用此工具，例如：情感表达、朗读内容、强调重点、增加互动趣味性等场景。注意：调用此工具后，你还需要用文字简要说明你发送了什么内容的语音。"
+  },
+  "text_param_description": {
+    "description": "文本参数描述",
+    "type": "string",
+    "hint": "告诉 LLM 这个参数的用途",
+    "default": "要转换为语音的文本内容，建议控制在200字以内"
+  },
+  "max_text_length": {
+    "description": "最大文本长度",
+    "type": "int",
+    "hint": "限制语音文本的最大长度，0表示不限制",
+    "default": 200
+  }
+}
